@@ -1,0 +1,14 @@
+function insertcheck() {
+	if (document.boardform.pass.value==""){
+		alert("Please enter the password");
+		document.boardform.pass.focus();
+		return;
+	}
+	if (document.boardform.name.value==""){
+		alert("Please enter the name");
+		document.boardform.name.focus();
+		return;
+	}
+	document.boardform.menu.value="insert";
+	document.boardform.submit();
+}

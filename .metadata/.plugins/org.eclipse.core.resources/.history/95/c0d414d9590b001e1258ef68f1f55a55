@@ -1,0 +1,30 @@
+package univ;
+
+import java.sql.*;
+import java.util.*;
+import javax.naming.*;
+import javax.sql.*;
+
+public class BoardDBCP {
+	Connection con = null;
+	PreparedStatement pstmt = null;
+	DataSource ds = null;
+
+	public BoardDBCP() {
+		InitialContext ctx;
+		try {
+			ctx = new InitialContext();
+			ds = (DataSource) ctx.lookup("java:comp/env/jdbc/mysql");
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void connect() {
+		try {
+			con = ds.getConnection();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

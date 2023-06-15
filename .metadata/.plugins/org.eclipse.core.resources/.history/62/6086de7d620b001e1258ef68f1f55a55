@@ -1,0 +1,41 @@
+function insertcheck() {
+	if (document.boardform.pass.value==""){
+		alert("Please enter the password");
+		document.boardform.pass.focus();
+		return;
+	}
+	if (document.boardform.name.value==""){
+		alert("Please enter the name");
+		document.boardform.name.focus();
+		return;
+	}
+	document.boardform.menu.value="insert";
+	document.boardform.submit();
+}
+function updatecheck() {
+	if (document.boardform.pass.value==""){
+		alert("Please enter the password");
+		document.boardform.pass.focus();
+		return;
+	}
+	if (document.boardform.name.value==""){
+		alert("Please enter the name");
+		document.boardform.name.focus();
+		return;
+	}
+	document.boardform.menu.value="update";
+	document.boardform.submit();
+}
+function deletecheck() {
+	if (document.boardform.pass.value==""){
+		alert("Please enter the password");
+		document.boardform.pass.focus();
+		return;
+	}
+	const ok = confirm("Are you sure you want to delete it?");
+	if (!ok) {
+		return;
+	}
+	document.boardform.menu.value="insert";
+	document.boardform.submit();
+}

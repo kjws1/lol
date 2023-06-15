@@ -1,0 +1,13 @@
+package univ;
+
+import java.util.Date;
+
+public class BoardEntity {
+	private int id;
+	private String name;
+	private String passwd;
+	private String title;
+	private String email;
+	private Date regdate;
+	private String content;
+}

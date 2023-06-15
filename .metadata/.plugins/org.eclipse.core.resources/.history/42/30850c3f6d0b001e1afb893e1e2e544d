@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<jsp:useBean id="brddb" class="univ.BoardDBCP" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>게시물 조회</h2>
+	<table>
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>작성일</th>
+			<th>전자메일</th>
+		</tr>
+		<c:set var="row" value="0" />
+		<c:forEach var="brd" items="${brddb.getBoardList() }">
+			<c:set var="color" value="${row % 2 == 0 ? 'papayawhip' : 'white' }" />
+			<tr style="background-color: '${color}'" >
+				<td><a href="editboard.jsp?id=${brd.getId() }">${brd.getId() }</a></td>
+				<td>${brd.getTitle() }</td>
+				<td>${brd.getName() }</td>
+				<td>${brd.getRegdate() }</td>
+				<td>${brd.getEmail() }</td>
+			</tr>
+			<c:set var="row" value="${row+1 }" />
+		</c:forEach>
+	</table>
+	<hr>
+	<p>조회된 게시물은 ${row }개 입니다.</p>
+	<hr>
+	<form name="form" method="post" action="editboard.jsp">
+		<input type="submit" value="게시등록">
+	</form>
+</body>
+</html>

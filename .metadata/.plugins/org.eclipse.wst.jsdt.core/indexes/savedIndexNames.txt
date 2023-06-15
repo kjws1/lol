@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\Rati\eclipse-workspaces\test1\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3804678107.index
+2867743334.index
+1278277006.index
+3297438170.index
+2922761688.index
+3398051269.index
+467082061.index
